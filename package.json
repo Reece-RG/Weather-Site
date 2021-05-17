@@ -1,0 +1,17 @@
+{
+  "name": "weather-site",
+  "version": "1.0.0",
+  "description": "Website to display weather of chosen location",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Reece Russell-Goodwin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}
