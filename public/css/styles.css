@@ -2,7 +2,7 @@ body {
   background-color: "white";
   margin: 0;
 }
-nav i,a{
+nav i,a.navbar-brand {
   font-family: "Pattaya", sans-serif;
 }
 nav, footer {
@@ -43,11 +43,7 @@ footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  padding: 20px 0;
-}
-footer p {
-  margin: 0;
-  text-align: center;
+  padding: 10px 0;
 }
 #info {
   position: absolute;
@@ -64,6 +60,21 @@ footer p {
   text-align: center;
   width: 70%;
 }
-.extrabtn {
-  border-radius: 100%;
+#loginForm {
+  position: absolute;
+  top: 40%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 20%;
+}
+.text-end a {
+  color: inherit;
+}
+.login {
+  padding: 3% 0;
+  text-align: center;
+}
+.login input{
+  padding: 3% 2%;
+  font-size: 1.25rem;
 }

@@ -1,0 +1,14 @@
+<%- include("partials/header.ejs") -%>
+<div id="loginForm">
+  <img src="https://img.icons8.com/office/60/000000/partly-cloudy-day--v2.png" alt="Weather-img" />
+  <br />
+  <h2>Please Sign Up</h2>
+  <form action="/signup" method="post">
+    <div class="login">
+      <input type="email" name="email" value="" placeholder="Email address">
+      <input type="password" name="password" value="" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+  </form>
+</div>
+<%- include("partials/footer.ejs") -%>
