@@ -1,11 +1,9 @@
 <%- include("partials/header.ejs") -%>
-<p>Add three locations: </p>
+<p>Add favourite location: </p>
 <form action="/profile" method="post">
-<input type="text", name="city1"/>
-<input type="text", name="city2"/>
-<input type="text", name="city3"/>
-<input type="email", name="email", placeholder="Enter Email To Confirm" />
-<button type=submit>Save</button>
+  <input type="text" , name="city1" />
+  <input type="email" , name="email" , placeholder="Enter Email To Confirm" />
+  <button type=submit>Save</button>
 </form>
 <a href="/logout">Logout</a>
 <%- include("partials/footer.ejs") -%>
