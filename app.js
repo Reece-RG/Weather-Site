@@ -28,7 +28,6 @@ app.use(function(req,res,next){
 next();
 });
 app.use(express.static("public"));
-app.use("/", require("./routes/index.js"));
 app.use("/", require("./routes/clients.js"));
 
 app.get("/", function(req, res){
