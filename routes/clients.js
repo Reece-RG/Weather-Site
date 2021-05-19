@@ -1,7 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const passport = require('passport');
 const bcrypt = require('bcrypt');
 const Client = require("../models/client.js");
+const https = require('https');
+const {ensureAuthenticated} = require("../config/auth.js");
 
 router.get("/login", function(req, res){
   res.render("login");
@@ -11,11 +14,24 @@ router.get("/signup", function(req, res){
   res.render("signup");
 });
 
-router.get("/users/login", function(req, res){
+router.get("/login2", function(req, res){
   res.render("login2");
 });
 
 router.post("/login", function(req, res, next){
+  passport.authenticate('local',{
+    successRedirect : '/profile',
+    failureRedirect : '/login2',
+    failureFlash : true,
+  })(req,res,next);
+});
+
+router.post("/login2", function(req, res, next){
+  passport.authenticate('local',{
+    successRedirect : '/profile',
+    failureRedirect : '/login2',
+    failureFlash : true,
+  })(req,res,next);
 });
 
 router.post("/signup", function(req, res){
@@ -47,7 +63,7 @@ router.post("/signup", function(req, res){
           Client.create(newClient, function(err){
             if (!err) {
               req.flash('success_msg','You have now registered!');
-              res.redirect("/users/login");
+              res.redirect("/login2");
             }
           });
       });
@@ -56,7 +72,20 @@ router.post("/signup", function(req, res){
 }
 });
 
+router.get('/profile', ensureAuthenticated, function(req,res){
+  res.render('profile');
+});
+
+router.post('/profile', ensureAuthenticated, function(req,res){
+  Client.findOneAndUpdate({email: req.body.email}, {$set: {city1: req.body.city1, city2: req.body.city2, city3: req.body.city3}}, function(err, client){});
+});
+
+
+
 router.get("/logout", function(req, res){
+  req.logout();
+  req.flash('success_msg','Now logged out');
+  res.redirect('/login2');
 });
 
 module.exports = router;
