@@ -12,12 +12,6 @@
     <% if(error != '') { %>
       <span><%= error %></span>
       <% } %>
-    <form action="/login" method="post">
-      <div class="login">
-        <input type="email" name="email" value="" placeholder="Email address">
-        <input type="password" name="password" value="" placeholder="Password">
-      </div>
-      <button type="submit" class="btn btn-primary btn-lg">Login</button>
-    </form>
+<%- include("partials/loginForm.ejs") -%>
   </div>
 <%- include("partials/footer.ejs") -%>

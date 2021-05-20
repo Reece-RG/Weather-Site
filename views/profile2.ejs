@@ -1,40 +1,6 @@
 <%- include("partials/header2.ejs") -%>
   <h3 class="profileTitle">Change favourite location: </h3>
-  <div>
-  <form class="savedCity" action="/profile" method="post">
-    <div class="form-row align-items-center">
-        <div class="col-auto">
-          <input type="text" class="form-control mb-2" id="inlineFormInput" name="city1" placeholder="Enter Location">
-        </div>
-        <div class="col-auto">
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">@</div>
-            </div>
-            <input type="email" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Email To Confirm">
-          </div>
-        </div>
-        <div class="col-auto">
-          <button type="submit" class="btn btn-success mb-2">Save</button>
-        </div>
-      </div>
-  </form>
+<%- include("partials/saveCity.ejs") -%>
   <hr class="separator">
-</div>
-<div class="forecast">
-  <h1>Weather in <%= weatherLoc %>, <%= weatherNT %>:</h1>
-  <div class="overview">
-    <h2><img src="http://openweathermap.org/img/wn/<%= weatherImg %>@2x.png" /><%= weatherDes %></h2>
-  </div>
-  <div class="temps">
-    <h3><img src="https://img.icons8.com/windows/64/000000/temperature-sensitive.png" />Feels Like: <%= weatherTemp %>°C</h3>
-    <h3><img src="https://img.icons8.com/windows/64/000000/temperature-low.png" />Min Temp: <%= weatherMin %>°C</h3>
-    <h3><img src="https://img.icons8.com/windows/64/000000/temperature-high.png" />Max Temp: <%= weatherMax %>°C</h3>
-  </div>
-  <div class="extraInfo">
-    <h3><img src="https://img.icons8.com/metro/52/000000/pressure.png" />Pressure: <%= weatherPres %>Pa</h3>
-    <h3><img src="https://img.icons8.com/metro/52/000000/humidity.png" />Humidity: <%= weatherHum %>%<h3>
-        <h3><img src="https://img.icons8.com/metro/52/000000/speed.png" />Wind Speed: <%= weatherWind %>m/s</h3>
-  </div>
-</div>
+<%- include("partials/apiRender.ejs") -%>
 <%- include("partials/footer.ejs") -%>
