@@ -1,9 +1,21 @@
-<%- include("partials/header.ejs") -%>
-<p>Add favourite location: </p>
-<form action="/profile" method="post">
-  <input type="text" , name="city1" />
-  <input type="email" , name="email" , placeholder="Enter Email To Confirm" />
-  <button type=submit>Save</button>
-</form>
-<a href="/logout">Logout</a>
+<%- include("partials/header2.ejs") -%>
+  <h3 class="profileTitle">Add favourite location: </h3>
+  <form class="savedCity" action="/profile" method="post">
+    <div class="form-row align-items-center">
+        <div class="col-auto">
+          <input type="text" class="form-control mb-2" id="inlineFormInput" name="city1" placeholder="Enter Location">
+        </div>
+        <div class="col-auto">
+          <div class="input-group mb-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">@</div>
+            </div>
+            <input type="email" class="form-control" id="inlineFormInputGroup" name="email" placeholder="Email To Confirm">
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-success mb-2">Save</button>
+        </div>
+      </div>
+  </form>
 <%- include("partials/footer.ejs") -%>

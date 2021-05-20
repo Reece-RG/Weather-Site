@@ -1,5 +1,6 @@
 body {
-  background-color: "white";
+  background-color: #fcfcfc;
+  background-image: url("https://www.transparenttextures.com/patterns/ag-square.png");
   margin: 0;
 }
 
@@ -70,7 +71,7 @@ footer {
 
 .forecast {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -102,4 +103,29 @@ footer {
 
 .errors {
   font-size: 0.5rem;
+}
+
+.savedCity {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profileTitle {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.separator {
+  position: absolute;
+  top: 22.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: #8ac4d0;
+  border-style: dotted none none;
+  border-width: 15px;
+  width: 20%;
 }
